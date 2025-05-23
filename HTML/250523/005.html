@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>테이블 실습</title>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            caption {
+                caption-side: top;
+                font-weight: bold;
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>
+                🐱나라별 가장 많다는 고양이 이름 순위🐱
+            </caption>
+            <thead>
+                <tr>
+                    <th scope="col">순위</th>
+                    <th scope="col">한국</th>
+                    <th scope="col">일본</th>
+                    <th scope="col">미국</th>
+                    <th scope="col">독일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1위</strong></td>
+                    <td>코코</td>
+                    <td>레오</td>
+                    <td>벨라</td>
+                    <td>릴리</td>
+                </tr>
+                <tr>
+                    <td><strong>2위</strong></td>
+                    <td>레오</td>
+                    <td>소라</td>
+                    <td>티거</td>
+                    <td>루나</td>
+                </tr>
+                <tr>
+                    <td><strong>3위</strong></td>
+                    <td>보리</td>
+                    <td>모모</td>
+                    <td>클로리</td>
+                    <td>미아</td>
+                </tr>
+                <tr>
+                    <td><strong>4위</strong></td>
+                    <td>뭉치</td>
+                    <td>코코</td>
+                    <td>쉐도우</td>
+                    <td>루시</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">모든 고양이는 귀엽다♥️</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>
