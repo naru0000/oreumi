@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>테이블 실습 심화</title>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+                font-family: Arial, sans-serif;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: center;
+            }
+            th {
+                background-color: #f4f4f4;
+            }
+            caption {
+                caption-side: top;
+                font-weight: bold;
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>
+                구매 내역
+            </caption>
+            <thead>
+                <tr>
+                    <th id="purchase" scope="col">구매항목</th>
+                    <th id="location" scope="col">장소</th>
+                    <th id="date" scope="col">날짜</th>
+                    <th id="color" scope="col">색상</th>
+                    <th id="cost" scope="col">비용</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="mac" scope="row">맥북</th>
+                    <td headers="location mac">가로수길애플스토어</td>
+                    <td headers="date mac">12/09</td>
+                    <td headers="color mac">실버</td>
+                    <td headers="cost mac">1,900,000</td>
+                </tr>
+                <tr>
+                    <th id="iphone" scope="row">아이폰16</th>
+                    <td headers="location iphone">여의도애플스토어</td>
+                    <td headers="date iphone">12/10</td>
+                    <td headers="color iphone">울트라마린</td>
+                    <td headers="cost iphone">1,250,000</td>
+                </tr>
+                <tr>
+                    <th id="ipad" scope="row">아이패드 프로</th>
+                    <td headers="location ipad">명동애플스토어</td>
+                    <td headers="date ipad">12/11</td>
+                    <td headers="color ipad">스페이스 블랙</td>
+                    <td headers="cost ipad">1,599,000</td>
+                </tr>
+                <tr>
+                    <th id="watch" scope="row">애플워치 SE</th>
+                    <td headers="location watch">잠실실애플스토어</td>
+                    <td headers="date watch">12/12</td>
+                    <td headers="color watch">미드나이트</td>
+                    <td headers="cost watch">329,000</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
