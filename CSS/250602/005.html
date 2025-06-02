@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+        <style>
+            [title] {
+                color: red;
+            }
+            /* 해당 속성에 해당 속성값을 가진 요소 선택 */
+            [title="hello"] {
+                background-color: bisque;
+            }
+            /* 공백으로 구분된 단어 목록 중 특정 단어를 포함하는 요소 선택 */
+            [class~="btn"] {
+                color: blue;
+            }
+            [class|="btn"] {
+                text-decoration: underline;
+            }
+            [class^="btn"] {
+                border: solid 2px salmon;
+            }
+        </style>
+    </head>
+    <body>
+        <p title="hello">hello world</p>
+        <p title="world">hello world</p>
+        <p class="btn primary">hello world</p>
+        <p class="secondary-btn">hello world</p>
+        <p class="btn tertiary">hello world</p>
+        <p class="btn-red">hello world</p>
+        <p class="btn">hello world</p>
+    </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>css 선택자 실습</title>
+        <style>
+            :root {
+                /* 컬러 */
+                --red-color: red;
+                --carrot-color: orange;
+                --yellow-color: yellow;
+                --green-color: green;
+                --blue-color: cornflowerblue;
+                --navy-color: navy;
+                --purple-color: purple;
+                --white-color: white;
+                --black-color: black;
+
+                /* 폰트 크기 */
+                --font-size-s: 12px;
+            }
+            span {
+                padding: 20px;
+                display: inline-block;
+                text-align: center;
+                font-weight: bold;
+            }
+            span:nth-child(1) {
+                background-color: var(--red-color);
+            }
+            span:nth-child(2) {
+                background-color: var(--carrot-color);
+            }
+            span:nth-child(3) {
+                background-color: var(--yellow-color);
+            }
+            span:nth-child(4) {
+                background-color: var(--green-color);
+            }
+            span:nth-child(5) {
+                background-color: var(--blue-color);
+            }
+            span:nth-child(6) {
+                background-color: var(--navy-color);
+            }
+            span:nth-child(7) {
+                background-color: var(--purple-color);
+            }
+            span:nth-child(2n) {
+                color: var(--white-color);
+            }
+            li::before {
+                content: "🐻‍❄️";
+            }
+            li:first-child::before {
+                content: "🦄";
+            }
+            li::after {
+                content: "팀원";
+                font-size: var(--font-size-s);
+            }
+            li:last-child::after {
+                content: "팀장";
+                color: var(--red-color);
+            }
+            .border {
+                border: 10px solid var(--black-color);
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <span class="border">빨강</span>
+            <span>주황</span>
+            <span>노랑</span>
+            <span>초록</span>
+            <span>파랑</span>
+            <span>남색</span>
+            <span class="border">보라</span>
+        </div>
+
+        <ul>
+            <li>지지</li>
+            <li>로지</li>
+            <li>웨이드</li>
+            <li>하티</li>
+            <li>라이캣</li>
+            <li>뮤라</li>
+        </ul>
+    </body>
+</html>

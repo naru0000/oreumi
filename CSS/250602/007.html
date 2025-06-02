@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+        <style>
+            /* 타입에 관계없이 자손 요소 중 위치 기반으로 선택 */
+            div:nth-child(1) {
+                color: red;
+            }
+            /* 짝수번째 요소 선택 */
+            div:nth-child(2n) {
+                background-color: aquamarine;
+            }
+            /* 홀수번째 요소 선택 */
+            div:nth-child(odd) {
+                background-color: bisque;
+            }
+            /* 홀수번째 요소 선택 - odd와 같음 */
+            div:nth-child(2n + 1) {
+                background-color: blue;
+            }
+            p:nth-child(3) {
+                background-color: brown;
+            }
+            /* 형제 요소 중 동일한 타입 요소 사이 위치 기반으로 선택 */
+            p:nth-of-type(3) {
+                background-color: yellowgreen;
+            }
+            div:only-of-type {
+                color: blueviolet;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>첫번째 문단</p>
+            <h2>첫번째 제목</h2>
+            <p>두번째 문단</p>
+            <p>세번째 문단</p>
+            <span>lorem ipsum</span>
+        </div>
+    </body>
+</html>

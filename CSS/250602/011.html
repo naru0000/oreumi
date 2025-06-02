@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+        <style>
+            /* 여러개의 선택자 지정할때 사용 */
+            :is(h1, h2, h3) a {
+                color: blue;
+            }
+            /* is와 유사하지만 우선순위가 낮음 */
+            :where(h1, h2, h3) a {
+                color: red;
+            }
+            /* 특정요소가 자식으로 링크를 포함하고 있는 경우에만. a태그를 가지고 있는 div를 찾아냄 */
+            div:has(a) {
+                background-color: lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><a>hello</a></h1>
+        <h2><a>hello</a></h2>
+        <h3><a>hello</a></h3>
+        <h4><a>hello</a></h4>
+        <div>
+            <p>lorem ipsum</p>
+        </div>
+        <div>
+            <a href="#">click me</a>
+        </div>
+    </body>
+</html>
