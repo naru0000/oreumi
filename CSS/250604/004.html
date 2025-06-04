@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+        <style>
+            .keyword-color {
+                color: red;
+            }
+            .hex-color {
+                color: #00ff00;
+            }
+            .rgb-color {
+                color: rgb(0, 0, 255);
+            }
+            .rgba-color {
+                color: rgba(255, 0, 0, 0.5);
+            }
+            div {
+                color: sandybrown;
+            }
+
+            /* 텍스트 색상 상속 */
+            p {
+                border: 1px solid currentColor;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="keyword-color">키워드로 설정한 색상</p>
+        <p class="hex-color">HEX 코드로 설정한 색상</p>
+        <p class="rgb-color">RGB로 설정한 색상</p>
+        <p class="rgba-color">투명도가 있는 RGBA 색상</p>
+
+        <div>
+            <p>안녕하세요</p>
+        </div>
+    </body>
+</html>

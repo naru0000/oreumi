@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+        <style>
+            /* 후자우선의 원칙 */
+            /* 동일한 선택자에 동일한 속성이 여러 번 정의되었을 때,
+            가장 마지막에 선언된 속성이 적용 */
+            p {
+                color: red;
+            }
+            p {
+                color: blue;
+            }
+            /* 구체성의 원칙 */
+            /* 가중치에 따라 가장 우선 순위가 높은 속성이 적용 */
+            #container p {
+                color: blue;
+            } /* 구체성: 100 + 1 */
+            div .text {
+                color: red;
+            } /* 구체성: 10 + 1 */
+            p {
+                color: green;
+            } /* 구체성: 1 */
+
+            /* 구체성 10+1 */
+            .ul a {
+                color: yellow;
+            }
+
+            /* 구체성 10 */
+            .click {
+                color: green;
+                background-color: black;
+            }
+
+            /* 구체성 9 - 요소 선택자는 아무리 많아도 클래스 선택자를 이길 수 없다. */
+            html body main section article div ul li p strong span a {
+                color: red;
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <p>hello world</p>
+        <div id="container">
+            <p class="text">Hello, World!</p>
+        </div>
+        <main>
+            <section>
+                <article>
+                    <div>
+                        <ul class="ul">
+                            <li>
+                                <p>
+                                    <strong>
+                                        <span>
+                                            <a href="" class="click">1. 이 글자는 어떤 색일까요?</a>
+                                        </span>
+                                    </strong>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>

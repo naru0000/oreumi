@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+        <style>
+            .px {
+                width: 500px;
+                background-color: blanchedalmond;
+            }
+            .parent {
+                width: 300px;
+                background-color: #e0e0e0;
+                padding: 10px;
+            }
+            .child {
+                width: 50%;
+                background-color: #b0b0b0;
+                padding: 10px;
+            }
+            .viewport-box {
+                width: 50vw;
+                height: 30vh;
+                background-color: #d0d0d0;
+                border: 1px solid #000;
+                padding: 10px;
+            }
+            .vmin {
+                background-color: cornflowerblue;
+                width: 50vmin;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="px">
+            <strong>div width: 500px</strong>
+            <br />
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non nam laudantium excepturi quisquam natus, asperiores eos commodi, delectus odio minus
+            esse velit harum quas veritatis, corporis earum omnis modi accusamus?
+        </div>
+        <div class="parent">
+            <div class="child">이 요소의 너비는 부모 너비의 50%입니다.</div>
+        </div>
+        <div class="viewport-box">이 상자는 너비는 뷰포트의 50%, 높이는 뷰포트는 30%입니다.</div>
+        <div class="vmin">
+            <strong>div width: 50vmin;</strong>
+            <br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium animi saepe magnam dolores vel, quis impedit? Ea alias repellendus eius
+            voluptatum. Debitis incidunt autem esse perspiciatis culpa natus, nisi voluptatum!
+        </div>
+    </body>
+</html>
