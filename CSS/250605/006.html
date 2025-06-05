@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+        <style>
+            div {
+                width: 1000px;
+                height: 1200px;
+                border: 5px solid black;
+
+                background-image: url(./images/bg.png);
+
+                /* 여백 발생 가능성 o, 이미지 비율 유지, 이미지 잘라지지 않음 */
+                background-size: contain;
+
+                /* 여백 발생 가능성 x,이미지 비율 유지, 이미지 잘릴 수 있음 */
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+        <style>
+            div {
+                width: 1000px;
+                height: 1200px;
+                border: 5px solid black;
+                font-size: 56px;
+                background-image: url(./images/bg.png);
+
+                /* 여백 발생 가능성 o, 이미지 비율 유지, 이미지 잘라지지 않음 */
+                background-size: contain;
+
+                /* 여백 발생 가능성 x,이미지 비율 유지, 이미지 잘릴 수 있음 */
+                background-size: cover;
+
+                background-attachment: scroll;
+
+                /* 이미지가 움직이지 않음 */
+                background-attachment: fixed;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quisquam voluptas amet voluptatum! Modi, fugit asperiores non quidem esse vero ab
+            magnam quis voluptatibus facilis dolores ducimus veritatis inventore expedita! Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+            quisquam voluptas amet voluptatum! Modi, fugit asperiores non quidem esse vero ab magnam quis voluptatibus facilis dolores ducimus veritatis
+            inventore expedita! Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quisquam voluptas amet voluptatum! Modi, fugit asperiores non
+            quidem esse vero ab magnam quis voluptatibus facilis dolores ducimus veritatis inventore expedita!
+        </div>
+    </body>
+</html>

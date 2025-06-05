@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+        <style>
+            div {
+                width: 1000px;
+                height: 1000px;
+                border: dotted 30px black;
+                padding: 50px;
+                background-color: lightcoral;
+
+                /* 배경이 어디까지 차지할 것인지 */
+                background-clip: border-box;
+
+                /* 배경이 패딩영역까지 차지 */
+                background-clip: padding-box;
+
+                /* 배경이 컨텐츠 크기만큼 차지 */
+                background-clip: content-box;
+
+                /* 테두리의 왼쪽 위 모서리를 기준 */
+                background-origin: border-box;
+
+                /* 안쪽 여백의 왼쪽 위 모서리를 기준 */
+                background-origin: padding-box;
+
+                /* 콘텐츠 영역의 왼쪽 위 모서리를 기준 */
+                background-origin: content-box;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>
