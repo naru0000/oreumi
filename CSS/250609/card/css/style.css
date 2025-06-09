@@ -1,0 +1,98 @@
+.card {
+    display: inline-block;
+    width: 300px;
+    box-shadow: 2px 2px 8px 0px #0000001a;
+    border-radius: 8px;
+    margin: 30px;
+    overflow: hidden;
+}
+.profile-box {
+    padding: 16px;
+}
+.profile-box img {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    float: left;
+    margin-right: 16px;
+}
+.profile-text {
+    display: inline-block;
+    padding: 3px 0;
+}
+.profile-box::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.profile-text h1 {
+    font-size: 19px;
+    font-weight: bold;
+    color: #29363d;
+    margin-bottom: 2px;
+}
+
+.profile-text p {
+    font-size: 14px;
+    color: #5a6a72;
+}
+
+.thumbnail {
+    width: 100%;
+}
+
+.text-box {
+    padding: 16px;
+}
+
+.text-box > p {
+    font-size: 12px;
+    line-height: 160%;
+    color: #5a6a72;
+    margin-bottom: 12px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* 블록 컨텐츠의 라인 수를 제한하는 속성입니다.*/
+}
+
+.text-box > a {
+    font-weight: bold;
+}
+
+.text-box > div::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.text-box > div * {
+    color: #29363d;
+}
+
+.text-box > div > a {
+    float: left;
+    line-height: 32px;
+    margin-right: 20px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.text-box > div > a + span {
+    line-height: 32px;
+    font-weight: bold;
+}
+
+.icon-box {
+    display: inline-block;
+    float: right;
+}
+
+.card.default .text-box h1 {
+    font-size: 19px;
+    font-weight: bold;
+    color: #29363d;
+    margin-bottom: 16px;
+}
