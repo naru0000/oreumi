@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+        <style>
+            .container {
+                height: 100vh;
+                background-color: gainsboro;
+
+                display: flex;
+
+                /* 주축의 방향 */
+                /* flex-direction: row;
+                flex-direction: row-reverse;
+                flex-direction: column;
+                flex-direction: column-reverse; */
+            }
+            .item {
+                width: 100px;
+                height: 100px;
+                font-size: 32px;
+                text-align: center;
+                line-height: 100px;
+            }
+            .item:nth-child(odd) {
+                background-color: lawngreen;
+            }
+
+            .item:nth-child(even) {
+                background-color: lightcoral;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+        </div>
+    </body>
+</html>

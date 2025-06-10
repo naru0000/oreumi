@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .wrap {
+                background-color: gainsboro;
+                width: 240px;
+                height: 240px;
+
+                /* 첫번째 방법 */
+                display: flex;
+                justify-content: end;
+                align-items: center;
+
+                /* 두번째 방법 */
+                /* display: flex;
+                flex-direction: column-reverse;
+                align-items: flex-end;
+                justify-content: center; */
+
+                /* 세번째 방법 */
+                /* display: flex;
+                flex-direction: row-reverse;
+                align-items: center; */
+
+                /* 네번째 방법 */
+                /* display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                align-items: flex-end; */
+
+                /* 다섯번째 방법 */
+                /* display: flex;
+                justify-content: space-evenly;
+                flex-direction: column;
+                align-items: flex-end;
+                */
+            }
+
+            .wrap > div {
+                color: white;
+                line-height: 70px;
+                text-align: center;
+                font-size: 20px;
+                width: 70px;
+                height: 70px;
+            }
+
+            .blue {
+                background-color: #4967d8;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="blue">A</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,94 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+* {
+    font-family: "Spoqa Han Sans Neo", "sans-serif";
+}
+
+/* 로그인 창 가운데 정렬 */
+body {
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login {
+    width: 400px;
+    background-color: #fff;
+    padding: 30px 25px;
+}
+
+.container {
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    padding: 19px 16px;
+}
+
+.container h3 {
+    font-size: 12px;
+    margin-bottom: 16px;
+}
+
+.container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #711bff;
+    color: #fff;
+    font-size: 12px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+/* 이미지 비율 조절 */
+.container button img {
+    width: 64px;
+    aspect-ratio: 64 / 18;
+    object-fit: cover;
+}
+
+.ico-box {
+    color: #767676;
+}
+
+.ico-box ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ico-box li {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+}
+
+.ico-box li span {
+    position: relative;
+    height: 75%;
+}
+
+/* 구분선은 가상 요소로 배치 */
+.ico-box li span::before {
+    content: "";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 1px;
+    width: 1px;
+    height: 100%;
+    background-color: #767676;
+}
+
+/* 스크린 리더 읽히지 않게 조정 */
+.ico-box li span span {
+    display: none;
+}
+
+.ico-box .ico {
+    width: 16px;
+    height: 16px;
+}

@@ -1,0 +1,230 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+* {
+    font-family: "Spoqa Han Sans Neo", "sans-serif";
+}
+
+/* 화면에 보이지 않지만 스크린 리더기에 읽히게 설정 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* 로그인창 가운데 정렬 */
+body {
+    background-color: #eee;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    width: 520px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #c4c4c4;
+}
+
+.login header {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 18px 0;
+    border-bottom: 1px solid #c4c4c4;
+    position: relative;
+}
+
+.login header h1 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.btn-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 16px;
+    height: 16px;
+}
+
+.btn-close img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+}
+
+main {
+    padding: 0 24px;
+}
+
+main h2 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    margin: 24px 0;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+}
+
+main label:first-child {
+    margin-bottom: 10px;
+}
+
+/* 아이디,비밀번호 창만 값을 다르게 설정하기 위함 */
+main label input[type="text"],
+main label input[type="password"] {
+    width: 100%;
+    border: 1px solid #c4c4c4;
+    height: 50px;
+    padding: 0 16px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.login-check {
+    display: flex;
+    width: fit-content;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+/* 커스텀 체크박스 디자인 사용을 위해 input 비노출 */
+.login-check input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    margin: 0;
+}
+
+.login-check span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #767676;
+}
+
+/* 가상 요소로 커스텀 체크박스 추가 */
+/* 체크하기 전 */
+.login-check span::before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: url(../src/check-box.svg);
+}
+
+/* 체크 후 */
+.login-check input:checked + span::before {
+    background: url(../src/check-box-active.svg);
+}
+
+main form button {
+    margin-top: 20px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #2f80ed;
+}
+
+.user-btn {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0 30px 0;
+}
+
+.user-btn li {
+    font-size: 14px;
+    color: #767676;
+}
+
+.user-btn > span {
+    position: relative;
+}
+
+.user-btn > span span {
+    display: none;
+}
+
+.user-btn > span::before {
+    content: "";
+    display: block;
+    overflow: hidden;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #767676;
+}
+
+footer {
+    padding: 0 24px 24px;
+}
+
+.text-box {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+}
+
+.text-box span {
+    font-size: 14px;
+    color: #767676;
+    word-break: keep-all;
+}
+
+.text-box hr {
+    width: 100%;
+    height: 1px;
+    background-color: #767676;
+}
+
+.login-box {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sns-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #767676;
+    color: #767676;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.login-box button img {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.sns-btn.facebook {
+    border: 1px solid #2d9cdb;
+}
+
+.sns-btn.naver {
+    border: 1px solid #00bf18;
+}
+
+.sns-btn.kakao {
+    border: 1px solid #f2c94c;
+}
