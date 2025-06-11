@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>gird 레이아웃 만들기</title>
+        <style>
+            .container {
+                width: 700px;
+                height: 500px;
+                font-size: 30px;
+                border: 5px solid black;
+                display: grid;
+                grid-template-columns: 1fr 280px;
+                grid-template-rows: 1fr 3fr 1fr;
+                grid-template-areas:
+                    "header header"
+                    "section aside"
+                    "footer footer";
+            }
+
+            .container > div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 5px solid black;
+                background-color: lightcoral;
+            }
+
+            .item1 {
+                grid-area: header;
+            }
+            .item2 {
+                grid-area: section;
+            }
+            .item3 {
+                grid-area: aside;
+            }
+            .item4 {
+                grid-area: footer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1">header</div>
+            <div class="item2">section</div>
+            <div class="item3">aside</div>
+            <div class="item4">footer</div>
+        </div>
+    </body>
+</html>

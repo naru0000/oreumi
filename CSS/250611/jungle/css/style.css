@@ -1,0 +1,297 @@
+/* 웹폰트 noto sans kr */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+/* 컬러 및 스페이싱 설정 */
+:root {
+    /* Color */
+    --text-gray: #828282;
+    --text-gray2: #4f4f4f;
+    --border-color: #bdbdbd;
+    --bg-color: #f2f2f2;
+
+    /* Shadow */
+    --list-shadow: 0px 0px 5px 0px #0000004d;
+    --thum-shadow: 0px 4px 4px 0px #00000040;
+
+    /* Spacing */
+    --spacing-xs: 2px; /* 아이콘 간격 */
+    --spacing-sm: 8px; /* 작은 간격 */
+    --spacing-md: 12px; /* 기본 간격 */
+    --spacing-lg: 20px; /* 큰 간격 */
+    --spacing-xl: 24px; /* 패딩 등 */
+    --spacing-xxl: 30px; /* 섹션 패딩 */
+
+    /* Border Radius */
+    --radius-sm: 10px;
+    --radius-md: 15px;
+
+    /* Layout - 실제 사용값 */
+    --container-width: 1200px;
+    --movie-card-width: 220px;
+    --movie-grid-gap: 24px;
+}
+
+/* 기본 스타일 */
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 카드 컨테이너 */
+section {
+    background-color: var(--bg-color);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xxl);
+    margin: 86px 0 135px 0;
+}
+
+section hr {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-color);
+    margin-top: 0;
+    margin-bottom: 28px;
+}
+
+/* 헤더 */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 37px;
+}
+
+/* 탭 네비게이션 */
+
+.tab ul {
+    display: flex;
+    gap: 60px;
+}
+
+.tab li.on {
+    font-weight: 700;
+}
+
+.tab li:not(.on) {
+    color: var(--text-gray);
+}
+
+/* 영화 리스트 */
+
+main {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+}
+
+.movie-list {
+    display: grid;
+    gap: var(--spacing-xl);
+    grid-template-columns: repeat(4, var(--movie-card-width));
+}
+
+/* 영화 카드 UI*/
+
+.movie {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: var(--spacing-xxl);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--list-shadow);
+}
+
+/* 영화 정보 */
+.info {
+    padding: 0 var(--spacing-lg);
+    margin-bottom: 18px;
+}
+
+.info > img {
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    object-fit: cover;
+    box-shadow: var(--thum-shadow);
+}
+
+.info h3 {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: var(--spacing-md) 0;
+    font-weight: 900;
+    font-size: 16px;
+}
+
+/* 영화 상세 정보 */
+
+.info ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "summary score"
+        "date date"
+        "actor actor";
+    gap: var(--spacing-sm);
+    font-size: 13px;
+}
+
+.info li {
+    display: flex;
+    align-items: center;
+    word-break: keep-all;
+}
+
+.info li span:first-child {
+    margin-right: 5px;
+    color: var(--text-gray);
+}
+
+/* Grid Areas */
+.summary {
+    grid-area: summary;
+}
+.score {
+    grid-area: score;
+}
+.score img {
+    margin-right: 2px;
+}
+.date {
+    grid-area: date;
+}
+.actor {
+    grid-area: actor;
+}
+
+.btn-box {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.btn-box li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-box li:first-child {
+    border-right: 1px solid var(--border-color);
+}
+
+.btn-box a,
+.btn-box button {
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 10px 28px;
+    word-break: keep-all;
+}
+
+/* 푸터 */
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 53px 0 38px 0;
+}
+
+footer .container {
+    width: var(--container-width);
+}
+
+footer hr {
+    margin-bottom: 36px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 42px;
+}
+
+.footer-top h2 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.footer-top ul {
+    display: flex;
+    gap: 21px;
+}
+
+.footer-bot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: var(--text-gray2);
+}
+
+.footer-bot ul {
+    display: flex;
+}
+
+.footer-bot li {
+    position: relative;
+    padding-left: var(--spacing-lg);
+}
+
+.footer-bot li::after {
+    content: "";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 1px;
+    height: 100%;
+    background-color: var(--text-gray2);
+}
+
+.footer-bot li:first-child {
+    padding-left: 0;
+}
+
+.footer-bot li:first-child:after {
+    display: none;
+}
+
+.footer-bot li:first-child strong {
+    margin-right: 0;
+}
+
+.footer-bot strong {
+    font-weight: 700;
+    margin-right: var(--spacing-sm);
+}
+
+.footer-bot > span {
+    font-weight: 700;
+}

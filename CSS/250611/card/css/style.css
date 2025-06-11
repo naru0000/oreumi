@@ -1,0 +1,56 @@
+body {
+    width: 100vw;
+    height: 100vh;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 20px;
+}
+
+.card {
+    box-shadow: 2px 2px 8px 0px #0000001a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.thumbnail {
+    width: 100%;
+}
+
+.text-box {
+    padding: 16px;
+}
+
+.text-box > p {
+    font-size: 12px;
+    line-height: 160%;
+    color: #5a6a72;
+    margin-bottom: 12px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* 블록 컨텐츠의 라인 수를 제한하는 속성입니다.*/
+}
+
+.text-box > a {
+    font-weight: bold;
+}
+
+.text-box > div * {
+    color: #29363d;
+}
+
+.text-box > div > a {
+    line-height: 32px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.text-box h1 {
+    font-size: 19px;
+    font-weight: bold;
+    color: #29363d;
+    margin-bottom: 16px;
+}
