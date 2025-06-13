@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+        <style>
+            .grid-box {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 100px;
+                padding: 100px;
+            }
+
+            .box {
+                width: 100px;
+                height: 100px;
+                border: solid 1px black;
+            }
+            .box > div {
+                width: 100px;
+                height: 100px;
+                background-color: lightcoral;
+                opacity: 0.8;
+            }
+
+            .item1:hover {
+                transform: translate(50px, 50px);
+                transform: translate(50%, 50%);
+                transform: translate(-50px, -50px);
+            }
+
+            .item2:hover {
+                transform: translateX(50px);
+            }
+
+            .item3:hover {
+                transform: translateY(50px);
+            }
+            .item4:hover {
+                transform: scale(2);
+            }
+            .item5:hover {
+                transform: rotate(45deg);
+            }
+            .item6:hover {
+                transform: skew(30deg);
+            }
+            .item7:hover {
+                transform: rotate(0.5turn);
+                transform-origin: left top;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid-box">
+            <div class="box">
+                <div class="item1">translate</div>
+            </div>
+            <div class="box">
+                <div class="item2">translateX</div>
+            </div>
+            <div class="box">
+                <div class="item3">translateY</div>
+            </div>
+            <div class="box">
+                <div class="item4">scale</div>
+            </div>
+            <div class="box">
+                <div class="item5">rotate</div>
+            </div>
+            <div class="box">
+                <div class="item6">skew</div>
+            </div>
+            <div class="box">
+                <div class="item7">origin</div>
+            </div>
+            <div class="box">
+                <div class="item8"></div>
+            </div>
+            <div class="box">
+                <div class="item9"></div>
+            </div>
+            <div class="box">
+                <div class="item10"></div>
+            </div>
+            <div class="box">
+                <div class="item11"></div>
+            </div>
+            <div class="box">
+                <div class="item12"></div>
+            </div>
+            <div class="box">
+                <div class="item13"></div>
+            </div>
+            <div class="box">
+                <div class="item14"></div>
+            </div>
+            <div class="box">
+                <div class="item15"></div>
+            </div>
+            <div class="box">
+                <div class="item16"></div>
+            </div>
+        </div>
+    </body>
+</html>

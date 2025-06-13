@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>애니메이션 실습</title>
+        <style>
+            @keyframes move-licat {
+                to {
+                    background-position: right 0;
+                }
+            }
+
+            @keyframes cafe-up {
+                to {
+                    background-position: right 0;
+                }
+            }
+
+            .licat {
+                width: 168px;
+                height: 200px;
+                background: url("./licat.png") no-repeat 0 0 / auto 100%;
+                animation: move-licat 0.8s infinite steps(6);
+                margin-bottom: 30px;
+            }
+
+            .cafe {
+                width: 125px;
+                height: 200px;
+                background: url("./building1.png") no-repeat 0 0 / auto 100%;
+                animation: cafe-up 2.5s infinite steps(33);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="licat"></div>
+        <div class="cafe"></div>
+    </body>
+</html>

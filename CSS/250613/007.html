@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+        <style>
+            .container {
+                perspective: 1000px;
+            }
+            .item {
+                width: 100px;
+                height: 100px;
+                transition: all 2s;
+                transform-style: preserve-3d;
+                position: relative;
+            }
+            .item::before,
+            .item::after {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+            }
+            .item::before {
+                content: "앞면";
+                background-color: lightseagreen;
+            }
+            .item::after {
+                content: "뒷면";
+                background-color: lightpink;
+                transform: rotateY(180deg);
+            }
+            .item:hover {
+                transform: rotateY(180deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item"></div>
+        </div>
+    </body>
+</html>

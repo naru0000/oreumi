@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+        <style>
+            .container {
+                perspective: 500px;
+                padding: 100px;
+            }
+            .item {
+                width: 200px;
+                height: 200px;
+                background-color: lightcoral;
+                transition: all 1s;
+            }
+            .item:hover {
+                transform: translateZ(100px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item"></div>
+        </div>
+    </body>
+</html>
