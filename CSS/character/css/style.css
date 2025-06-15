@@ -7,6 +7,7 @@
 
 body {
     width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,11 +15,14 @@ body {
     background-size: cover;
 }
 
+body * {
+    font-family: "OKCHAN";
+}
+
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: "OKCHAN";
     margin: 50px 0;
     gap: 20px;
 }
@@ -26,18 +30,21 @@ header {
 header h1 {
     font-size: 50px;
     color: #fff;
-    text-shadow: 1px 1px 2px rgb(255, 225, 0), 0 0 1em rgb(255, 81, 0), 0 0 0.2em rgb(255, 242, 0);
+    text-shadow: 1px 1px 2px rgb(5 0 195), 0 0 1em rgb(255 0 151), 0 0 0.2em rgb(0 0 0);
 }
 
 header p {
     font-size: 24px;
     color: #fff;
-    text-shadow: #fc0 1px 0 10px;
+    text-shadow: #53006d 1px 0 10px;
 }
 
 .container {
     width: 800px;
 }
+
+/* 상단 캐릭터 선택 */
+
 .character-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -45,14 +52,19 @@ header p {
     margin-bottom: 30px;
 }
 .character-grid label {
-    border: 5px solid #4d43ff;
-    border-radius: 20px;
-    color: #fff;
-    padding: 20px;
+    border: 5px solid #ccc;
     text-align: center;
     cursor: pointer;
-    background-color: rgba(150, 166, 255, 0.3);
+    background-color: #142045;
+    overflow: hidden;
 }
+
+.character-grid label h2 {
+    width: 100%;
+    background-color: #ccc;
+    padding: 10px;
+}
+
 .character-grid label img {
     object-fit: cover;
     width: 100%;
@@ -62,23 +74,336 @@ header p {
     display: none;
 }
 
-.character-display {
-}
+/* 하단 캐릭터 설명 */
 
 .character-info {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
+    min-height: 410px;
     display: none;
 }
 
+.character-img {
+    position: relative;
+    animation: pulse 1.5s infinite;
+}
+
+.character-img .body {
+    position: relative;
+    width: 80%;
+}
+
+.character-img img:not(.body) {
+    position: absolute;
+    z-index: 1;
+}
+
+.character-text button {
+    background-color: #142045;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* html 캐릭터  */
+
+.character-info.html .text {
+    width: 50%;
+    left: 20%;
+    top: 8%;
+}
+
+.character-info.html .arm {
+    transform-origin: left bottom;
+    width: 12%;
+    top: 61%;
+    right: 38%;
+    animation: arm 1s ease-out infinite;
+}
+
+.character-info.html [class*="brow"] {
+    width: 4%;
+}
+
+.character-info.html .brow-l {
+    top: 31%;
+    left: 25%;
+    animation: brow 3s infinite;
+}
+
+.character-info.html .brow-r {
+    top: 33%;
+    left: 48%;
+}
+
+.character-info.html [class*="eye"] {
+    width: 10%;
+    animation: blink 0.5s ease-out infinite;
+}
+
+.character-info.html .eye-l {
+    top: 37%;
+    left: 21%;
+}
+
+.character-info.html .eye-r {
+    top: 39%;
+    left: 46%;
+}
+
+/* CSS 캐릭터  */
+
+.character-info.css .text {
+    width: 35%;
+    left: 24%;
+    top: 6%;
+}
+
+.character-info.css [class*="eye"] {
+    width: 7%;
+}
+
+.character-info.css .eye-l {
+    top: 34%;
+    left: 26%;
+    animation: shake 0.1s ease-out infinite;
+}
+
+.character-info.css .eye-r {
+    top: 36%;
+    left: 48%;
+    animation: shake 0.1s ease-out infinite;
+}
+
+/* JS 캐릭터  */
+
+.character-info.js .body {
+    width: 70%;
+}
+
+.character-info.js .text {
+    width: 35%;
+    top: 10%;
+    left: 18%;
+}
+
+.character-info.js .arm-l {
+    transform-origin: right bottom;
+    width: 26%;
+    top: 28%;
+    left: -17%;
+    animation: arm-l 0.5s ease-out infinite;
+}
+
+.character-info.js .arm-r {
+    transform-origin: left top;
+    width: 34%;
+    top: 31%;
+    left: 52%;
+    animation: arm-r 0.5s ease-out infinite;
+}
+
+.character-info.js .eye-l {
+    width: 8%;
+    top: 46%;
+    left: 18%;
+    animation: shake 0.1s ease-out infinite;
+}
+
+.character-info.js .eye-r {
+    width: 9%;
+    top: 44%;
+    left: 41%;
+    animation: shake 0.1s ease-out infinite;
+}
+
+.character-info.js .leg-l {
+    transform-origin: top;
+    z-index: 0;
+    width: 26%;
+    top: 78%;
+    left: 1%;
+    animation: leg-l 0.5s ease-out infinite;
+}
+
+.character-info.js .leg-r {
+    width: 26%;
+    top: 74%;
+    left: 32%;
+    animation: leg-r 0.5s ease-out infinite;
+}
+
+.character-info.js .mouth {
+    width: 23%;
+    top: 55%;
+    left: 24%;
+}
+
+.character-info.js .mouth-d {
+    width: 7%;
+    top: 66%;
+    left: 32%;
+}
+
+.character-info.js .wrinkles-l {
+    width: 4%;
+    top: 49%;
+    left: 13%;
+    transform: rotate(162deg);
+}
+
+.character-info.js .wrinkles-r {
+    width: 4%;
+    top: 47%;
+    left: 52%;
+}
+
+.character-info.js .wrinkles-c {
+    width: 8%;
+    top: 47%;
+    left: 30%;
+}
+
+.character-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fff;
+    padding: 30px;
+}
+
+.character-text h3 {
+    font-size: 30px;
+}
+
+/* 캐릭터 선택시 하단 캐릭터 등장  */
+
 .character-grid:has(#html:checked) ~ .character-display .html {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
 }
 .character-grid:has(#css:checked) ~ .character-display .css {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
 }
 .character-grid:has(#js:checked) ~ .character-display .js {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+/* 캐릭터 선택시 나오는 애니메이션 */
+
+@keyframes pulse {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes blink {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(0.5px);
+    }
+    0% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes brow {
+    0% {
+        transform: rotateZ(0);
+    }
+    50% {
+        transform: rotateZ(15deg);
+    }
+    100% {
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes arm {
+    0% {
+        transform: rotateZ(0);
+    }
+    50% {
+        transform: rotateZ(15deg);
+    }
+    100% {
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(1px);
+    }
+    50% {
+        transform: translateX(-1px);
+    }
+    75% {
+        transform: translateX(1px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes arm-l {
+    0% {
+        transform: rotateZ(0);
+    }
+    50% {
+        transform: rotateZ(10deg);
+    }
+    100% {
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes arm-r {
+    0% {
+        transform: rotateZ(0);
+    }
+    50% {
+        transform: rotateZ(-10deg);
+    }
+    100% {
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes leg-l {
+    0% {
+        transform: rotateZ(0);
+    }
+    50% {
+        transform: rotateZ(-10deg);
+    }
+    100% {
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes leg-r {
+    0% {
+        transform: rotateZ(0);
+    }
+    50% {
+        transform: rotateZ(10deg);
+    }
+    100% {
+        transform: rotateZ(0);
+    }
 }
