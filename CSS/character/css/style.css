@@ -1,0 +1,44 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #eee;
+}
+.container {
+    width: 800px;
+}
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.character-grid label {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.character-grid input {
+    display: none;
+}
+
+.character-display {
+}
+
+.character-info {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.character-grid:has(#a:checked) ~ .character-display .a {
+    display: block;
+}
+.character-grid:has(#b:checked) ~ .character-display .b {
+    display: block;
+}
