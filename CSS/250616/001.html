@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>calc 함수 실습</title>
+        <style>
+            div {
+                background-color: lightpink;
+                width: 1400px;
+                max-width: calc(100% - 60px);
+                height: 200px;
+                margin: auto;
+            }
+            ol {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                list-style: none;
+                background-color: lightblue;
+                float: left;
+                padding: 20px 0;
+                width: calc((100% - (50px * 2)) / 3);
+            }
+            li:not(:first-child) {
+                margin-left: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <ol>
+            <li>이불 정리</li>
+            <li>옷 갈아입기</li>
+            <li>세안 하기</li>
+        </ol>
+    </body>
+</html>
