@@ -1,0 +1,29 @@
+// Scss
+
+%card-base {
+  padding: 24px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.basic-card {
+  @extend %card-base;
+}
+
+.premium-card {
+  @extend %card-base;
+  border-color: #ffd700;
+  background: #2c2c2c;
+  position: relative;
+  color: white;
+}
+
+.featured-card {
+  @extend %card-base;
+  border-top: 4px solid #007bff;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+  position: relative;
+  padding-top: 32px;
+}

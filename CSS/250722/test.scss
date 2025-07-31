@@ -1,0 +1,29 @@
+// 버튼 스타일링 믹스인 만들기
+@mixin button-style($bg-color, $text-color, $padding) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $padding;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-style1 {
+  @include button-style(#007bff, white, 10px 20px);
+}
+
+.btn-style2 {
+  @include button-style(#6c757d, white, 8px 16px);
+}
+
+@mixin responsive-font($mobile-size, $tablet-size, $desktop-size) {
+  font-size: $mobile-size;
+
+  @media screen and (min-width: 768px) {
+    font-size: $tablet-size;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: $desktop-size;
+  }
+}
