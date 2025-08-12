@@ -1,6 +1,4 @@
-import { createContext, useState } from "react";
-import LanguageSelector from "./LangSelector";
-import { Header, Content } from "./Contents";
+import { createContext, useContext, useState } from "react";
 
 const languages = {
   en: {
@@ -23,20 +21,17 @@ const languages = {
   },
 };
 
-export const LanguageContext = createContext();
+const LanguageContext = createContext();
 
-function LanguageProvider() {
-  const [language, setLanguage] = useState("ko");
-  const currentLanguage = languages[language];
+function LanguageProvider({ children }) {
+  const [languageState, setLanguageState] = useState("ko");
 
+  const changeLanguage = (lang) => {
+    setLanguageState(lang);
+  };
   return (
-    // useContext를 사용할 것이라서 매우 깔끔해진 것을 볼 수 있습니다.
-    <LanguageContext.Provider value={{ currentLanguage, language, setLanguage }}>
-      <LanguageSelector />
-      <Header />
-      <Content />
-    </LanguageContext.Provider>
+    <LanguageContext.Provider value={{ languageState, changeLanguage, languages }}>{children}</LanguageContext.Provider>
   );
 }
 
-export default LanguageProvider;
+export { LanguageProvider, LanguageContext };
