@@ -4,18 +4,37 @@ export function useScrollThrottle() {
   const [isBottom, setIsBottom] = useState();
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    function throttle(callback, delay) {
+      let timer = null;
+
+      return () => {
+        if (timer === null) {
+          timer = setTimeout(() => {
+            callback();
+            timer = null;
+          }, delay);
+        }
+      };
+    }
+
+    const handleScroll = () => {
       setIsBottom(
         window.innerHeight + document.documentElement.scrollTop + 10 >= document.documentElement.offsetHeight
       );
-      console.log("scrolling...");
-    });
+    };
+
+    const throttleHandler = throttle(handleScroll, 1000);
+    // window.addEventListener("scroll", () => {
+    //     setIsBottom(window.innerHeight + document.documentElement.scrollTop + 10 >= document.documentElement.offsetHeight);
+    //     console.log("scrolling...");
+    // });
+
+    window.addEventListener("scroll", throttleHandler);
+
+    return () => {
+      window.removeEventListener("scroll", throttleHandler);
+    };
   }, []);
 
   return isBottom;
-}
-
-function throttle(func, delay) {
-  // 여기에 시간 체크 로직
-  // 조건 맞으면 func() 실행
 }
