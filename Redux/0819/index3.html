@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>리덕스 실습2</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.js"></script>
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 필터 버튼들 -->
+  <div class="filters">
+    <button class="filter-btn" data-filter="무료 주차 공간">무료 주차 공간</button>
+    <button class="filter-btn" data-filter="대형 욕조">대형 욕조</button>
+    <button class="filter-btn" data-filter="바베큐 그릴">바베큐 그릴</button>
+    <button class="filter-btn" data-filter="게스트용 별채">게스트용 별채</button>
+    <button class="filter-btn" data-filter="수영장">수영장</button>
+    <button class="filter-btn" data-filter="주방">주방</button>
+    <button class="filter-btn" data-filter="TV">TV</button>
+  </div>
+
+  <div class="active-filter">
+    <span id="active-filter-list">없음</span>
+  </div>
+
+  <div class="result-count">
+    총 <span id="result-count">0</span>개의 숙소
+  </div>
+
+  <div class="accommodation-list" id="accommodation-list"></div>
+
+
+  <script>
+
+    const accommodations = [
+      {
+        id: 1,
+        name: "코지 하우스",
+        price: "₩120,000",
+        amenities: ["무료 주차 공간", "주방", "TV"]
+      },
+      {
+        id: 2,
+        name: "럭셔리 빌라",
+        price: "₩350,000",
+        amenities: ["수영장", "대형 욕조", "바베큐 그릴", "게스트용 별채"]
+      },
+      {
+        id: 3,
+        name: "모던 아파트",
+        price: "₩80,000",
+        amenities: ["무료 주차 공간", "TV", "주방"]
+      },
+      {
+        id: 4,
+        name: "펜션 하우스",
+        price: "₩200,000",
+        amenities: ["바베큐 그릴", "수영장", "무료 주차 공간"]
+      },
+      {
+        id: 5,
+        name: "스튜디오",
+        price: "₩60,000",
+        amenities: ["TV", "주방"]
+      },
+      {
+        id: 6,
+        name: "풀빌라",
+        price: "₩450,000",
+        amenities: ["수영장", "대형 욕조", "바베큐 그릴", "게스트용 별채", "무료 주차 공간", "주방", "TV"]
+      }
+    ];
+
+    const reducer = (state, action) => {
+      if (state === undefined) {
+        return {
+          activeFilters: [],
+          filteredResults: accommodations,
+          resultCount: accommodations.length
+        }
+      }
+      switch (action.type) {
+        case 'TOGGLE_FILTER':
+          let newActiveFilters;
+          if (state.activeFilters.includes(action.payload)) {
+            newActiveFilters = state.activeFilters.filter(filter => filter !== action.payload)
+          } else {
+            newActiveFilters = [...state.activeFilters, action.payload]
+          }
+      }
+    }
+  </script>
+</body>
+
+</html>

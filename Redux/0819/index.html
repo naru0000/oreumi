@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>리덕스 실습</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.js"></script>
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      width: 100%;
+      border: 4px solid #333;
+      padding: 30px;
+    }
+
+    .font-box {
+      border: 4px solid orange;
+      padding: 20px;
+      background-color: #f9f9f9;
+      min-height: 50px;
+    }
+
+    #font-box-0 {
+      font-family: Arial;
+    }
+
+    #font-box-1 {
+      font-family: Impact;
+    }
+
+    #font-box-2 {
+      font-family: "Times New Roman";
+    }
+
+    #font-box-3 {
+      font-family: Georgia;
+    }
+
+    #font-box-4 {
+      font-family: Verdana;
+    }
+
+    #font-box-5 {
+      font-family: "Comic Sans MS";
+    }
+  </style>
+</head>
+
+<body>
+
+  <form>
+    <input type="text" id="textInput" placeholder="텍스트 입력">
+    <button type="button" id="clickBtn">Click Me!</button>
+  </form>
+
+  <div class="container">
+    <div id="font-box-0" class="font-box">hello</div>
+    <div id="font-box-1" class="font-box">hello</div>
+    <div id="font-box-2" class="font-box">hello</div>
+    <div id="font-box-3" class="font-box">hello</div>
+    <div id="font-box-4" class="font-box">hello</div>
+    <div id="font-box-5" class="font-box">hello</div>
+  </div>
+
+  <script>
+
+    // 폰트가 추가될때 관리하기 쉽게 하기 위해
+    const fonts = ["Arial", "Impact", "Times New Roman", "Georgia", "Verdana", "Comic Sans MS"];
+
+    // 리듀서
+    const reducer = (state, action) => {
+
+      // 초기값 설정
+      if (state === undefined) {
+        return {
+          displayText: "hello"
+        }
+      }
+
+      // 분기 처리(새로운 상태의 객체를 리턴)
+      switch (action.type) {
+        case 'CHANGE_TEXT':
+          return {
+            ...state,
+            displayText: action.payload
+          }
+        default: return state;
+      }
+    }
+
+    // 저장소(store)
+    const store = Redux.createStore(
+      reducer,
+      // Redux DevTools Extension을 사용하기 위한 설정
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    );
+
+    // 액션 생성
+    const changeTextAction = (newText) => {
+      return {
+        type: 'CHANGE_TEXT',
+        payload: newText
+      }
+    }
+
+    // 화면 업데이트
+    const updateDisplay = () => {
+      const state = store.getState();
+      for (let i = 0; i < fonts.length; i++) {
+        const element = document.getElementById(`font-box-${i}`)
+        element.style.fontFamily = fonts[i];
+        element.innerHTML = state.displayText
+      }
+    }
+
+
+    // 디스패치
+    const handleTextChange = () => {
+      const inputValue = document.querySelector('#textInput').value;
+      store.dispatch(changeTextAction(inputValue))
+    }
+
+    // 상태 변경 시 화면 연결
+    store.subscribe(updateDisplay);
+
+    // 버튼 클릭시 이벤트 연결
+    document.getElementById('clickBtn').addEventListener('click', handleTextChange);
+
+    // 렌더링(폰트 적용, 초기 한 번 호출을 해야 상태 바뀔때마다 자동 실행)
+    updateDisplay();
+  </script>
+</body>
+
+</html>
